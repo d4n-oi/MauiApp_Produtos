@@ -4,21 +4,22 @@
              x:Class="MauiApp3.ProdutoPage"
              BindingContext="{x:Reference Produto}"
              Title="ProdutoPage">
-    <VerticalStackLayout>
-        <Button
-            Text="Voltar"
-            x:Name="btnVoltar"
-            Clicked="btnVoltar_Clicked"
-            />
+    <VerticalStackLayout
+        Padding="30,0"
+        Spacing="25"
+        BackgroundColor= "#ddf">
         <Grid>
 
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
 
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
@@ -42,7 +43,7 @@
                 Padding="15"/>
 
             <Label 
-                Text="{Binding Preco}"
+                Text="{Binding Preco, StringFormat='R$ {0:F2}'}"
                 Grid.Row="1"
                 Grid.Column="1"
                 FontSize="Large"
@@ -60,7 +61,50 @@
                 Text="{Binding Categoria}"
                 FontSize="Large"
                 Padding="15"/>
+            
+            <Label 
+                Grid.Row="3"
+                Text="Descrição"
+                FontSize="Medium"
+                Padding="15"/>
+
+            <Label 
+                Grid.Column="1"
+                Grid.Row="3"
+                Text="{Binding Descricao}"
+                FontSize="Large"
+                Padding="15"/>
+            
+            <Label 
+                Grid.Row="4"
+                Text="Estoque"
+                FontSize="Medium"
+                Padding="15"/>
+
+            <Label 
+                Grid.Column="1"
+                Grid.Row="4"
+                Text="{Binding Estoque}"
+                FontSize="Large"
+                Padding="15"/>
+            
+            <Image 
+                Grid.Column="3"
+                Grid.Row="4"
+                Source ="{Binding Imagem}"
+                WidthRequest="100" 
+                HeightRequest="100"/>
+            
         </Grid>
 
+        <Button
+            HeightRequest="50"
+            WidthRequest="150"
+            VerticalOptions="End"
+            HorizontalOptions="End"
+            Text="Lista"
+            x:Name="btnVoltar"
+            Clicked="btnVoltar_Clicked"
+            />
     </VerticalStackLayout>
 </ContentPage>

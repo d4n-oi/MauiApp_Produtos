@@ -9,11 +9,6 @@
         Padding="30,0"
         Spacing="25"
         BackgroundColor= "#ddf">
-        <Button
-            Text="Voltar"
-            x:Name="btnVoltar"
-            Clicked="btnVoltar_Clicked"
-            />
         <ListView x:Name=" lstProduto" ItemSelected="lstProduto_ItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType = "local:Produto">
@@ -28,16 +23,26 @@
 
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="Auto"/>
                             </Grid.ColumnDefinitions>
 
                             <Label Text="{Binding Nome}" 
                                    Grid.Row="1"
                                    FontSize="Medium"
                                    Padding="15"/>
+                            
                         </Grid>
                     </ViewCell>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <Button
+            HeightRequest="50"
+            WidthRequest="150"
+            HorizontalOptions="End"
+            Text="Voltar"
+            x:Name="btnVoltar"
+            Clicked="btnVoltar_Clicked"
+            />
     </VerticalStackLayout>
 </ContentPage>

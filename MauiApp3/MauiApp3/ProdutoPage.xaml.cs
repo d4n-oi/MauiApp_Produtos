@@ -11,4 +11,9 @@ public partial class ProdutoPage : ContentPage
     {
         Navigation.PushAsync(new ListaProdutoPage());
     }
+
+    private void btnHome_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new MainPage());
+    }
 }

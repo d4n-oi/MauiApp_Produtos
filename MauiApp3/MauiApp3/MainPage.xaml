@@ -7,18 +7,39 @@
         <VerticalStackLayout
             Padding="30,0"
             Spacing="25"
-            BackgroundColor= "#ddf">
-            <Button
-                
-                Text="Amostra"
-                x:Name="btnProduto"
-                Clicked="btnProduto_Clicked"
-                />
-            <Button
-                Text="Lista de Produtos"
-                x:Name="btnListaProduto"
-                Clicked="btnListaProduto_Clicked"
-                />
+            BackgroundColor= "#ddf"
+            >
+            <Grid 
+                HorizontalOptions="Center"
+                Padding="15">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Button
+                    Grid.Column="0"
+                    HeightRequest="50"
+                    WidthRequest="150"
+                    Text="Amostra"
+                    x:Name="btnProduto"
+                    Clicked="btnProduto_Clicked"
+                    />
+                <Button
+                    Grid.Column="1"
+                    HeightRequest="50"
+                    WidthRequest="150"
+                    Text="Lista de Produtos"
+                    x:Name="btnListaProduto"
+                    Clicked="btnListaProduto_Clicked"
+                    />
+            </Grid>
+            
             <Image
                 Source="pato.png"
                 HeightRequest="180"
